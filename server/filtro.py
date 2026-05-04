@@ -1,9 +1,8 @@
-from livros import *
-
 def filtrar_livros(livros, titulo="", autor="", genero="", ano=""):
-    titulo = titulo.lower()
-    autor = autor.lower()
-    genero = genero.lower()
+    titulo = titulo.lower().strip()
+    autor = autor.lower().strip()
+    genero = genero.lower().strip()
+    ano = str(ano).strip()
 
     resultado = []
 
@@ -17,7 +16,7 @@ def filtrar_livros(livros, titulo="", autor="", genero="", ano=""):
         if genero and genero not in livro["genero"].lower():
             continue
 
-        if ano and str(livro["ano"]) != str(ano):
+        if ano and str(livro["ano"]) != ano:
             continue
 
         resultado.append(livro)

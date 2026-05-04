@@ -1,11 +1,20 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
+
 from livros import livros
 from filtro import filtrar_livros
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route("/", methods=["GET"])
-def index():
+
+@app.route("/")
+def home():
+    return send_from_directory("../client", "index.html")
+
+
+@app.route("/api/livros", methods=["GET"])
+def listar_livros():
     titulo = request.args.get("titulo", "")
     autor = request.args.get("autor", "")
     genero = request.args.get("genero", "")
@@ -19,8 +28,8 @@ def index():
         ano=ano
     )
 
-    return render_template("index.html", livros=livros_filtrados)
+    return jsonify(livros_filtrados)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
