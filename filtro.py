@@ -1,18 +1,25 @@
-from dicionari import *
+from livros import *
 
-def filtrar_livros(livros, titulo=None, autor=None, genero=None, ano=None):
-    resultado = livros
+def filtrar_livros(livros, titulo="", autor="", genero="", ano=""):
+    titulo = titulo.lower()
+    autor = autor.lower()
+    genero = genero.lower()
 
-    if titulo is not None:
-        resultado = [l for l in resultado if l["titulo"] == titulo]
+    resultado = []
 
-    if autor is not None:
-        resultado = [l for l in resultado if l["autor"] == autor]
+    for livro in livros:
+        if titulo and titulo not in livro["titulo"].lower():
+            continue
 
-    if genero is not None:
-        resultado = [l for l in resultado if l["genero"] == genero]
+        if autor and autor not in livro["autor"].lower():
+            continue
 
-    if ano is not None:
-        resultado = [l for l in resultado if l["ano"] == ano]
+        if genero and genero not in livro["genero"].lower():
+            continue
+
+        if ano and str(livro["ano"]) != str(ano):
+            continue
+
+        resultado.append(livro)
 
     return resultado
