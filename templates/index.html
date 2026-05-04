@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Livraria</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+}
+
+button {
+    grid-column: span 4;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.livro {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #333;
+}
+
+.vazio {
+    text-align: center;
+    color: gray;
+}
+
+@media (max-width: 700px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        grid-column: span 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Livraria</h1>
+</header>
+
+<div class="container">
+
+<form method="GET">
+    <input type="text" name="titulo" placeholder="Título">
+    <input type="text" name="autor" placeholder="Autor">
+    <input type="text" name="genero" placeholder="Gênero">
+    <input type="number" name="ano" placeholder="Ano">
+    <button type="submit">Filtrar</button>
+</form>
+
+{% if livros %}
+    {% for livro in livros %}
+    <div class="livro">
+        <h3>{{ livro.titulo }}</h3>
+        <p><strong>Autor:</strong> {{ livro.autor }}</p>
+        <p><strong>Gênero:</strong> {{ livro.genero }}</p>
+        <p><strong>Ano:</strong> {{ livro.ano }}</p>
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="vazio">Nenhum livro encontrado.</p>
+{% endif %}
+
+</div>
+
+</body>
+</html>
