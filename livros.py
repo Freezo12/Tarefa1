@@ -1,0 +1,21 @@
+livros = [
+    {"titulo": "Dom Casmurro", "autor": "Machado de Assis", "genero": "Romance", "ano": 1899},
+    {"titulo": "Memórias Póstumas de Brás Cubas", "autor": "Machado de Assis", "genero": "Romance", "ano": 1881},
+    {"titulo": "Quincas Borba", "autor": "Machado de Assis", "genero": "Romance", "ano": 1891},
+    {"titulo": "Capitães da Areia", "autor": "Jorge Amado", "genero": "Romance", "ano": 1937},
+    {"titulo": "A Hora da Estrela", "autor": "Clarice Lispector", "genero": "Ficção", "ano": 1977},
+    {"titulo": "Vidas Secas", "autor": "Graciliano Ramos", "genero": "Romance", "ano": 1938},
+    {"titulo": "O Cortiço", "autor": "Aluísio Azevedo", "genero": "Naturalismo", "ano": 1890},
+    {"titulo": "Iracema", "autor": "José de Alencar", "genero": "Romance", "ano": 1865},
+    {"titulo": "1984", "autor": "George Orwell", "genero": "Distopia", "ano": 1949},
+    {"titulo": "Fahrenheit 451", "autor": "Ray Bradbury", "genero": "Distopia", "ano": 1953},
+    {"titulo": "Duna", "autor": "Frank Herbert", "genero": "Ficção Científica", "ano": 1965},
+    {"titulo": "Orgulho e Preconceito", "autor": "Jane Austen", "genero": "Romance", "ano": 1813},
+    {"titulo": "O Iluminado", "autor": "Stephen King", "genero": "Terror", "ano": 1977},
+    {"titulo": "Drácula", "autor": "Bram Stoker", "genero": "Terror", "ano": 1897},
+    {"titulo": "Frankenstein", "autor": "Mary Shelley", "genero": "Terror", "ano": 1818},
+    {"titulo": "O Pequeno Príncipe", "autor": "Antoine de Saint-Exupéry", "genero": "Fábula", "ano": 1943},
+    {"titulo": "A Metamorfose", "autor": "Franz Kafka", "genero": "Ficção", "ano": 1915},
+    {"titulo": "Ensaio sobre a Cegueira", "autor": "José Saramago", "genero": "Ficção", "ano": 1995},
+    {"titulo": "O Alquimista", "autor": "Paulo Coelho", "genero": "Ficção", "ano": 1988}
+]
