@@ -8,9 +8,6 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/")
-def home():
-    return send_from_directory("../client", "index.html")
 
 
 @app.route("/api/livros", methods=["GET"])
@@ -32,4 +29,4 @@ def listar_livros():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=8081)
